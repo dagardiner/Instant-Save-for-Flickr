@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Instant Save for Flickr",
+  "short_name": "Instant Save for Flickr",
+  "version": "1.2",
+  "description": "This extension allows saving of any Flickr image via a single click on the context menu from the Photo page.",
+  "offline_enabled": false,
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [ "https://www.flickr.com/photos/*","https://www.flickr.com/groups/*" ],
+      "js": [ "app.js" ]
+    }
+  ],
+  
+  "permissions": [
+    "contextMenus"
+   ],
+   
+   "icons": {
+      "16": "camera-16px.png"
+    }
+}
